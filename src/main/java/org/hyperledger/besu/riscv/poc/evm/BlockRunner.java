@@ -58,7 +58,7 @@ public class BlockRunner {
 
 public static BlockRunner create(final List<BlockHeader> prevHeaders, final Map<Hash,Bytes> trienodes, final Map<Hash,Bytes> codes) {
 
-        final GenesisConfig genesisConfig = GenesisConfig.fromSource(GenesisConfig.class.getResource("/mainnet.json"));
+        final GenesisConfig genesisConfig = GenesisConfig.fromSource(GenesisConfig.class.getResource("/hoodi.json"));
 
         final NoOpMetricsSystem noOpMetricsSystem = new NoOpMetricsSystem();
 
@@ -232,7 +232,7 @@ public static BlockRunner create(final List<BlockHeader> prevHeaders, final Map<
                         "jsonrpc": "2.0",
                         "method": "debug_executionWitness",
                         "params": [
-                            "0xE9E53"
+                            "0xC9B0"
                         ],
                         "id": 1
                     }'
@@ -251,7 +251,7 @@ public static BlockRunner create(final List<BlockHeader> prevHeaders, final Map<
                         "jsonrpc": "2.0",
                         "method": "debug_getRawBlock",
                         "params": [
-                            "0xE9E53"
+                            "0xC9B0"
                         ],
                         "id": 1
                     }'
@@ -265,7 +265,7 @@ public static BlockRunner create(final List<BlockHeader> prevHeaders, final Map<
     }
     
     public static void main(final String[] args) {
-        System.out.println("Starting BlockRunner ");
+        System.out.println("Starting BlockRunner .");
         final Map<Hash, Bytes> trieNodes = EXECUTION_WITNESS.getState().stream()
                 .map(Bytes::fromHexString)
                 .collect(Collectors.toMap(
