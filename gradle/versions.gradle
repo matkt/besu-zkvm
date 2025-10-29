@@ -34,5 +34,4 @@ dependencies {
         exclude group: 'org.hyperledger.besu', module: 'boringssl'
     }
 
-    errorprone 'com.google.errorprone:error_prone_core:2.35.1'
 }
